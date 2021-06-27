@@ -1,0 +1,485 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    /* overflow: hidden; */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    color: lightgray;
+}
+
+.material-icons{
+    padding-right: 5px;
+}
+
+/* ***************************************************************************************************** */
+
+.nav-bar{
+    height: 100%;
+    width: 230px;
+    min-width: 200px;
+    background-color: black;
+}
+
+.logo{
+    height: 73px;
+    min-height: 73px;
+    color: #fff;
+    font-size:x-large;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    padding: 0 28px;
+}
+
+.nav-options{
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 8px;
+}
+
+.option,.create-playlist{
+    display: flex;
+    flex-direction: row;
+    height: 36px;
+    min-height: 36px;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.option.selected{
+    color: #fff;
+    background-color: #444;
+    border-radius: 6px;
+}
+
+.playlists-container{
+    height: calc( 100vh - 255px );
+    border-top: 2px #444 solid;
+    border-bottom: 2px #444 solid;
+    overflow-y: scroll;
+}
+
+.current-song-img{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.current-song-values{
+    width: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+
+.current-song-name{
+    display: flex;
+    color: #fff;
+    height: 20px;
+    overflow: scroll;
+}
+
+.current-song-artist{
+    font-size: 0.80rem;
+    padding: 6px 0;
+    height: 20px;
+    overflow: scroll;
+}
+
+.current-song-name::-webkit-scrollbar,.current-song-artist::-webkit-scrollbar {
+    display: none;
+}
+
+.current-song-name,.current-song-artist {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.favourite-song{
+    width: 15%;
+}
+
+.current-song-img img{
+    height: 50px;
+    min-height: 50px;
+    width: 85%;
+}
+
+/* *************************************************************************************************** */
+
+.content-container{
+    height: 100%;
+    width: 100%;
+    background-color: #161616;
+
+}
+
+.search-container{
+    background-color: black;
+    width: 100%;
+    height: 57px;
+    min-height: 57px;
+    display: flex;
+    align-items: center;
+    padding-left: 0 10px;
+}
+
+.search-input{
+    height: 36px;
+    min-height: 36px;
+    width: 30vw;
+    min-width: 250px;
+    padding: 0 12px;
+    outline: none;
+    border-radius: 15px;
+}
+
+
+.current-song-container{
+    background-color: black;
+    height: 73px;
+    min-height: 73px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: 73px;
+}
+
+.player-container{
+    width: 85%;
+    height: 73px;
+    min-height: 73px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.media-options,.progress-container{
+    width:60%;
+    /* min-width: 200px; */
+}
+
+.media-options{
+    height: 40px;
+    min-height: 40px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-option-button{
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-option-button.selected{
+    color: blue;
+}
+
+.play-button{
+    font-size: 40px;
+}
+
+.progress-container{
+    height: 33px;
+    min-height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.duration{
+    font-size: small;
+    width: 40px;
+}
+
+.end-duration{
+    text-align: right;
+}
+
+input[type="range"] {
+	-webkit-appearance: none;
+	outline: none;
+	height: 2px;
+    width: 100%;
+}
+input[type="range"]::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	height: 15px;
+	width: 15px;
+	background: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+    
+}
+
+.other-player-info{
+    width: 15%;
+    height: 73px;
+    min-height: 73px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.volume-option{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* *************************************************************************************************** */
+
+.songs-container{
+    height: calc( 100vh - 130px );
+    background-image: linear-gradient(#0c0c0c, rgb(39, 38, 38));
+}
+
+.nav-title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: underline;
+    height: 50px;
+    min-height: 50px;
+}
+
+/* ************************************************************************************************ */
+/* CARD */
+
+.list{
+    overflow-y: scroll;
+    height: calc( 100vh - 226px );
+}
+
+.card-heading,.scard-heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0 0 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+
+.scard-heading{
+    border-radius: 0px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.card-heading:hover{
+    background-color: #444;
+}
+
+.card-heading.selected{
+    background-color: #444;
+}
+
+.list-index,.slist-index{
+    width: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.list-title,.slist-title{
+    width: 90%;
+    /* min-width: 230px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.slist-title{
+    margin-left: 55px;
+}
+
+.list-img-container{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-img-container img{
+    width: 40px;
+    height: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.list-song-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+
+.song-name{
+    color: #fff;
+    overflow-x:hidden;
+}
+
+.song-artist{
+    font-size: 0.80rem;
+    padding: 6px 0;
+    overflow-x: hidden;
+}
+
+.list-favourite-song,.slist-favourite-song,.list-playList-add{
+    padding-left: 3px;
+    border-radius: 50%;
+}
+.list-favourite-song:hover,.list-playList-add:hover{
+    background-color: rgb(61, 61, 61);
+}
+
+
+.list-duration,.slist-duration{
+    width: 80px;
+    min-width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slist-duration{
+    align-items: flex-start;
+}
+
+/* ************************************************************************************* */
+
+.create-playlist-modal {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    background-color: rgba(68, 68, 68, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-top {
+    background-color: #fff;
+    box-shadow: 0 8px 16px 0 rgb(88, 88, 88);
+    padding: 15px;
+    min-width: 400px;
+    width: 30vw;
+    background-color: black;
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 26px;
+    color: #444;
+    font-weight: bold;
+}
+
+.modal-input-container{
+    padding: 20px;
+}
+
+.modal-input-title{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.modal-input {
+    width: 100%;
+    height: 2rem;
+    font-size: 1.2rem;
+    outline-color: #444;
+}
+
+.modal-confirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 15px;
+}
+
+.button {
+    border: 1px solid;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.yes-button{
+    color: #444;
+}
+
+.yes-button:hover{
+    cursor: not-allowed;
+    color: #444;
+}
+
+.active {
+    background-color: #444;
+    color: #fff;
+}
+
+.active:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+.no-button{
+    color: #444;
+}
+
+.no-button:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.delete-icon {
+    margin-right: 5px;
+}
+
+.name-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px ;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiMusic</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="nav-bar">
+            <div class="logo"><span class="material-icons">audiotrack</span> ApiMusic</div>
+            <div class="nav-options">
+                <div playListName="globalList" class="option selected"><span class="material-icons">album</span>Songs</div>
+                <div playListName="favoritesList" class="option favorite"><span class="material-icons">favorite</span>Favourites</div>
+                <div class="create-playlist"><span class="material-icons">playlist_add</span>Create PlayList</div>
+            </div>
+
+            <div class="playlists-container">
+                <!-- <div playListName="playList1" class="option">playList1</div> -->
+                
+            </div>
+
+            <div class="current-song-container">
+                <div class="current-song-img">
+                    <img src="https://tse1.mm.bing.net/th/id/OET.5d57604ae56a44d19d7c0a0851a788da?w=272&h=272&c=7&rs=1&o=5&dpr=1.25&pid=1.9" alt="">
+                </div>
+                <div class="current-song-values">
+                    <div class="current-song-name">Unknown</div>
+                    <div class="current-song-artist">Unknown</div>
+                </div>
+                <div class="favourite-song"><span class="material-icons">favorite_border</span></div>
+            </div>
+        </div>
+
+
+
+        <div class="content-container">
+            <div class="search-container">
+                <span class="material-icons">search</span>
+                <input class="search-input" type="text" placeholder="Songs, or Artists"></input>
+            </div>
+
+            <div class="songs-container">
+                <div class="nav-title">Songs</div>
+                
+                <div class="scard-heading">
+                    <div class="slist-index">#</div>
+                    <div class="slist-title">
+                        Title
+                    </div>
+                    <div class="slist-favourite-song"></div>
+                    <div class="slist-duration"><span class="material-icons">schedule</span></div>
+                </div>
+
+                <div class="list">
+                    <!-- <div class="card-heading">
+                        <div class="list-index">1</div>
+                        <div class="list-title">
+                            <div class="list-img-container">
+                                <img src="https://tse1.mm.bing.net/th/id/OET.5d57604ae56a44d19d7c0a0851a788da?w=272&h=272&c=7&rs=1&o=5&dpr=1.25&pid=1.9" alt="">
+                            </div>
+                            <div class="list-song-container">
+                                <div class="song-name">Unknown</div>
+                                <div class="song-artist">Unknown</div>
+                            </div>
+                        </div>
+                        <div class="list-favourite-song"><span class="material-icons">favorite_border</span></div>
+                        <div class="list-duration">0:00</div>
+                    </div> -->
+
+                </div>
+                
+            </div>
+
+            <div class="current-song-container">
+
+                <div class="player-container">
+                    <div class="media-options">
+                        <div class="shuffle-button media-option-button material-icons">shuffle</div>
+                        <div class="previous-button media-option-button material-icons">skip_previous</div>
+                        <div class="play-button media-option-button material-icons">play_circle_filled</div>
+                        <div class="next-button media-option-button material-icons">skip_next</div>
+                        <div class="autoplay-button media-option-button material-icons">repeat</div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="current-duration duration">0:00</div>
+                        <input class="song-position" type="range" value="0" min="0" max="100">
+                        <div class="end-duration duration">0:00</div>
+                    </div>
+                </div>
+
+                <div class="other-player-info">
+                    <div class="playlist-info"></div>
+                    <div class="volume-option">
+                        <span class="material-icons">volume_up</span>
+                        <input class="volume" type="range" value="100" min="0" max="100">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- <div class="create-playlist-modal">
+            <div class="modal-top">
+                <div class="modal-title">Create PlayList</div>
+                <div class="modal-input-container">
+                    <span class="modal-input-title">Playlist Name:</span>
+                    <input class="modal-input" type="text" />
+                </div>
+                <div class="modal-confirmation">
+                    <div class="button yes-button">OK</div>
+                    <div class="button no-button">Cancel</div>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+    <script src="./playlistObj.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
